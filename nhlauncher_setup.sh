@@ -109,8 +109,8 @@ check_and_remove https://github.com/mrh0wl/Cloudmare
 
 check_and_remove https://github.com/m0rtem/CloudFail
 cd /root/CloudFail
-python3 -m venv envc
-source envc/bin/activate
+python3 -m venv evcf
+source evcf/bin/activate
 pip3 install -r requirements.txt
 deactivate
 cd /root
