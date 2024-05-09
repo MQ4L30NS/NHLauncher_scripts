@@ -22,7 +22,7 @@ counter=1
 
 # Define an array of packages
 packages=(
-    libnl-3-dev libnl-genl-3-dev tlp python3-pyudev python3-evdev libsystemd-dev libglib2.0-dev libbluetooth-dev set wapiti sqlsus libswitch-perl pdf-parser 
+    libnl-3-dev libnl-genl-3-dev tlp python3-venv python3-pyudev python3-evdev libsystemd-dev libglib2.0-dev libbluetooth-dev set wapiti sqlsus libswitch-perl pdf-parser 
     pdfid sleuthkit jadx davtest golang evilginx2 imagemagick ghostscript python3 build-essential p0f spiderfoot dmitry netdiscover nmap ike-scan recon-ng amass 
     dnsenum dnsmap dnsrecon dnstracer dnswalk fierce urlcrazy firewalk fragrouter ftester lbd wafw00f arping fping hping3 masscan ncat unicornscan theharvester twofi 0trace 
     intrace irpas netmask enum4linux nbtscan smbmap smtp-user-enum swaks braa onesixtyone snmp ssldump sslscan tlssled lynis peass afl++ unix-privesc-check 
@@ -109,7 +109,10 @@ check_and_remove https://github.com/mrh0wl/Cloudmare
 
 check_and_remove https://github.com/m0rtem/CloudFail
 cd /root/CloudFail
+python3 -m venv envc
+source envc/bin/activate
 pip3 install -r requirements.txt
+deactivate
 cd /root
 
 check_and_remove https://github.com/aboul3la/Sublist3r
@@ -129,7 +132,7 @@ cd /root
 check_and_remove https://github.com/scipag/vulscan
 ln -s `pwd`/vulscan /usr/share/nmap/scripts/vulscan
 
-check_and_remove https://github.com/RustScan/RustScan
+check_and_remove https://github.com/Superoldman96/RustScan
 cd /root/RustScan
 cargo build --release
 ln -s /root/RustScan/target/release/rustscan /usr/bin/rustscan
